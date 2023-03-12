@@ -11,11 +11,10 @@ export const BestEmployees = (props) => {
     <>
       <div className="container">
         <div className="table-wrapper">
-          <h2>Last month tasks:</h2>
+          <h2>Past month completed tasks:</h2>
           <table>
 
             {props.lastMonthBest.slice(0, 5).map(x => (<thead> <th> <td className="best"><b><em>{x[0]}</em></b> complete <b>{x[1]}</b>. </td></th> </thead>))}
-
 
 
           </table>

@@ -8,7 +8,7 @@ export const NavBar = (props) => {
         <li><Link to="/employees">Employees</Link></li>
         <li><Link to="/tasks">Tasks</Link></li>
         <br></br>
-        <li><button className="employeeBtn" onClick = {props.bestEmployees}>Last month completed tasks</button></li>
+        <li><button className="employeeBtn" onClick = {props.bestEmployees}>Completed tasks</button></li>
       </ul>
     </nav>
   )

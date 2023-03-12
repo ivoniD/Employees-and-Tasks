@@ -74,7 +74,7 @@ function App() {
     console.log(today);
     const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
     console.log(lastMonth);
-    const lastMonthTasks = allTasks.filter(task => new Date(task.dueDate) >= lastMonth);
+    const lastMonthTasks = allTasks.filter(task => (new Date(task.dueDate) >= lastMonth && new Date(task.dueDate) <= today));
     const employeeTasks = lastMonthTasks.reduce((acc, task) => {
       if (task.employee in acc) {
         acc[task.employee]++;
@@ -85,7 +85,7 @@ function App() {
     }, {});
 
 
-  const sortedEmployeeTasks = Object.entries(employeeTasks).sort(([a], [b]) => b - a)
+  const sortedEmployeeTasks = Object.entries(employeeTasks).sort(([,a], [,b]) => b - a)
     setLastMonthBest(sortedEmployeeTasks)
     navigate('bestEmployees')
   }
